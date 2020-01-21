@@ -1,0 +1,23 @@
+
+  <h2 style="color: orangered;" >My Favorites</h2>
+<div class="container">
+  <div class="box" *ngFor="let weathersFive of listFavorites">
+  <div class="weather-card one" >
+    <div class="card-body">
+      <div
+       class="top">
+        <div class="wrapper">
+          <img id="icons" src="https://www.accuweather.com/images/weathericons/{{weathersFive.Icon}}.svg" class="img-fluid" style="width:50%;height: 50% ;">
+          <h1 class="heading">{{weathersFive.WeatherText}}</h1>
+          <h3 class="location">{{weathersFive.City}}</h3>
+          <h4>{{weathersFive.Date}}</h4>
+
+          <p class="temp">
+            <span class="temp-value">{{weathersFive.TemperatureValue}}{{weathersFive.TemperatureUnit}}</span>
+          </p>
+          <button class="btn btn-danger"  id="deleteItem"(click)="deleteItem(weathersFive.City)">Delete from Favorites</button>
+        </div>
+        </div>
+    </div>
+  </div>
+  </div>

@@ -1,0 +1,62 @@
+
+<div class="container">
+  <div class="row">
+      <div class="form-inline">
+          <input type="text" style="width: 60%;"
+          class="form-control" id="inputLoc"
+          name="search" style="text-align: center;"
+          [(ngModel)]="asyncSelected"
+          [typeaheadAsync]="true"
+          [typeahead]="dataSource"
+          (typeaheadLoading)="changeTypeaheadLoading($event)"
+          (typeaheadOnSelect)="typeaheadOnSelect($event)"
+          (typeaheadOnSelect)="typeaheadOnSelect($event)"
+          typeaheadOptionField="LocalizedName"
+          placeholder="Enter location"
+          autocomplete="off">
+            </div>
+  </div>
+  <div class="row">
+   
+			<div class="weather-card one"   *ngIf="selectedWeather">
+        <div class="card-body">
+        <div class="col-3-sm">
+          <button id="btnSave" (click)="toSaveFavorites( selectedWeather,selectedItem.Key)">Save to favorites</button>
+        </div>
+				<div class="top">
+					<div class="wrapper">
+						<h1 class="heading">{{selectedWeather.WeatherText}}</h1>
+						<h3 class="location">{{nameCity}}</h3>
+						<p class="temp">
+							{{selectedWeather.Temperature.Metric.Value}} {{selectedWeather.Temperature.Metric.Unit}}        
+            </p>
+            <img id="icons" src="https://www.accuweather.com/images/weathericons/{{selectedWeather.WeatherIcon}}.svg">
+          </div>
+          
+       
+				</div>
+				<div class="bottom">
+					<div class="wrapper">
+            <div class="row">
+              <div class="col"  *ngFor="let weathersFive of fiveWeathers">
+                <img id="icons" src="https://www.accuweather.com/images/weathericons/{{weathersFive.Day.Icon}}.svg" style="width:50%;height: 50% ;">               
+                <p style="font-size:15px;">{{weathersFive.Temperature.Minimum.Value}}{{weathersFive.Temperature.Minimum.Unit}}</p>
+              </div>
+            </div>
+              </div>
+					</div>
+				</div>
+			</div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
