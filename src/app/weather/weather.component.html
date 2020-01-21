@@ -17,29 +17,29 @@
             </div>
   </div>
   <div class="row">
-   
+
 			<div class="weather-card one"   *ngIf="selectedWeather">
         <div class="card-body">
         <div class="col-3-sm">
-          <button id="btnSave" (click)="toSaveFavorites( selectedWeather,selectedItem.Key)">Save to favorites</button>
+          <button id="btnSave" (click)="toSaveFavorites( )">Save to favorites</button>
         </div>
 				<div class="top">
 					<div class="wrapper">
 						<h1 class="heading">{{selectedWeather.WeatherText}}</h1>
 						<h3 class="location">{{nameCity}}</h3>
 						<p class="temp">
-							{{selectedWeather.Temperature.Metric.Value}} {{selectedWeather.Temperature.Metric.Unit}}        
+							{{selectedWeather.Temperature.Metric.Value}} {{selectedWeather.Temperature.Metric.Unit}}
             </p>
             <img id="icons" src="https://www.accuweather.com/images/weathericons/{{selectedWeather.WeatherIcon}}.svg">
           </div>
-          
-       
+
+
 				</div>
 				<div class="bottom">
 					<div class="wrapper">
             <div class="row">
               <div class="col"  *ngFor="let weathersFive of fiveWeathers">
-                <img id="icons" src="https://www.accuweather.com/images/weathericons/{{weathersFive.Day.Icon}}.svg" style="width:50%;height: 50% ;">               
+                <img id="icons" src="https://www.accuweather.com/images/weathericons/{{weathersFive.Day.Icon}}.svg" style="width:50%;height: 50% ;">
                 <p style="font-size:15px;">{{weathersFive.Temperature.Minimum.Value}}{{weathersFive.Temperature.Minimum.Unit}}</p>
               </div>
             </div>
